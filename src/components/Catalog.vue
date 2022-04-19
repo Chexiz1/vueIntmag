@@ -6,6 +6,7 @@
         v-for="product in products"
         :key="product.article"
         :product_data="product"
+        @sendDataToParent="showChaildarticle"
       />
     </div>
   </div>
@@ -66,6 +67,12 @@ export default {
         },
       ],
     }
+  },
+  computed: {},
+  methods: {
+    showChaildarticle(data) {
+      console.log(data)
+    },
   },
 }
 </script>
