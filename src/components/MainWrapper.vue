@@ -16,9 +16,7 @@ export default {
   },
   name: 'm-ainwrapper',
   data() {
-    return {
-      title: 'Я ребенок',
-    }
+    return {}
   },
 }
 </script>

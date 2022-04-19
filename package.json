@@ -11,7 +11,9 @@
     "axios": "^0.26.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "sass-loader": "^12.6.0",
+    "node-sass": "^7.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "~5.0.0",
