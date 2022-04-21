@@ -1,5 +1,5 @@
 <template>
-  <div class="catalog-item">
+  <div class="catalog_item">
     <img
       class="catalog-image"
       :src="require('@/assets/styles/images/' + product_data.image)"
@@ -33,8 +33,8 @@ export default {
 </script>
 
 <style>
-.catalog-item {
-  flex-basis: 29%;
+.catalog_item {
+  flex-basis: 25%;
   box-shadow: 0 0 8px 0 #e0e0e0;
   padding: 16px;
   margin-bottom: 16px;
