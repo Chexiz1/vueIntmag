@@ -11,16 +11,17 @@ export default createStore({
     },
   },
   mutations: {
-    set_products_to_state(state, products) {
+    SET_PRODUCTS_TO_STATE(state, products) {
       state.products = products
     },
   },
-  action: {
-    async get_products_from_api({ state, commit }) {
-      return axios
-        .get(' http://localhost:3000/products')
+  actions: {
+    GET_PRODUCTS_FROM_API({ commit }) {
+      return axios('http://localhost:3000/products', {
+        method: 'GET',
+      })
         .then((products) => {
-          commit('set_products_to_state', products.data)
+          commit('SET_PRODUCTS_TO_STATE', products.data)
           return products
         })
         .catch((error) => {

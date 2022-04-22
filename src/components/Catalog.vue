@@ -14,7 +14,7 @@
 
 <script>
 import CatalogItem from '@/components/CatalogItem'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import { mapGetters } from 'vuex'
 export default {
   name: 'catalog',
@@ -26,18 +26,20 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters({
-      products: 'products',
-    }),
+    ...mapGetters(['products']),
   },
   methods: {
-    ...mapActions(['get_products_from_api']),
+    ...mapActions(['GET_PRODUCTS_FROM_API']),
     showChaildarticle(data) {
       console.log(data)
     },
   },
   mounted() {
-    this.get_products_from_api
+    this.GET_PRODUCTS_FROM_API().then((response) => {
+      if (response.data) {
+        console.log('DATA')
+      }
+    })
   },
 }
 </script>
