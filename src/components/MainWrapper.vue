@@ -1,22 +1,26 @@
 <template>
   <div class="mainwrapper">
-    <p>{{ title }}</p>
+    <p></p>
     <catalog />
-    <cart />
+    <cart v-if="CART.length" :cart_data="CART" />
   </div>
 </template>
 
 <script>
 import Catalog from '@/components/Catalog'
 import Cart from '@/components/Cart'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Catalog,
     Cart,
   },
-  name: 'm-ainwrapper',
+  name: 'mainwrapper',
   data() {
     return {}
+  },
+  computed: {
+    ...mapGetters(['CART']),
   },
 }
 </script>

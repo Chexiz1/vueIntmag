@@ -3,10 +3,10 @@
     <h1>Catalog</h1>
     <div class="catalog-list">
       <catalog-item
-        v-for="product in products"
+        v-for="product in PRODUCTS"
         :key="product.article"
         :product_data="product"
-        @sendDataToParent="showChaildarticle"
+        @addToCart="addToCart"
       />
     </div>
   </div>
@@ -26,12 +26,12 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters(['products']),
+    ...mapGetters(['PRODUCTS', 'CART']),
   },
   methods: {
-    ...mapActions(['GET_PRODUCTS_FROM_API']),
-    showChaildarticle(data) {
-      console.log(data)
+    ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
+    addToCart(data) {
+      this.ADD_TO_CART(data)
     },
   },
   mounted() {
