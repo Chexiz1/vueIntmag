@@ -35,13 +35,18 @@ export default {
       },
     },
   },
+  data() {
+    return {}
+  },
   computed: {},
   methods: {
     deleteFromCart() {
       this.$emit('deleteFromCart')
     },
   },
-  mounted() {},
+  mounted() {
+    this.cart_item_data['quantity'] = 1
+  },
 }
 </script>
 

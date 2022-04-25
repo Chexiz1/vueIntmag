@@ -20,8 +20,8 @@ export default createStore({
     },
     SET_CART: (state, product) => {
       if (state.cart.length) {
-        const isProductExists = false
-        store.cart.map(function (item) {
+        let isProductExists = false
+        state.cart.map(function (item) {
           if (item.article === product.article) {
             isProductExists = true
             item.quantity++
