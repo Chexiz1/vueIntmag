@@ -30,6 +30,7 @@ export default {
   props: {
     cart_item_data: {
       type: Object,
+      Array,
       default() {
         return {}
       },
@@ -43,9 +44,6 @@ export default {
     deleteFromCart() {
       this.$emit('deleteFromCart')
     },
-  },
-  mounted() {
-    this.cart_item_data['quantity'] = 1
   },
 }
 </script>

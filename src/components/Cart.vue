@@ -1,5 +1,8 @@
 <template>
   <div class="cart">
+    <router-link :to="{ name: 'catalog' }">
+      <div class="catalog-linc-to-cart">Вернуться в каталог</div>
+    </router-link>
     <h1>Cart</h1>
     <cart-item
       v-for="(item, i) in cart_data"
@@ -11,12 +14,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import Catalog from '@/components/Catalog.vue'
 import CartItem from '@/components/CartItem'
 import { mapActions } from 'vuex'
 export default {
   name: 'cart',
   components: {
     CartItem,
+    Catalog,
   },
   props: {
     cart_data: {
@@ -25,6 +31,9 @@ export default {
         return []
       },
     },
+  },
+  computed: {
+    ...mapGetters(['CART']),
   },
   methods: {
     ...mapActions(['DELETE_FROM_CART']),

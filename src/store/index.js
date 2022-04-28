@@ -40,9 +40,8 @@ export default createStore({
   },
   actions: {
     async GET_PRODUCTS_FROM_API({ commit }) {
-      return await axios('http://localhost:3000/products', {
-        method: 'GET',
-      })
+      return await axios
+        .get('http://localhost:3000/products')
         .then((products) => {
           commit('SET_PRODUCTS_TO_STATE', products.data)
           return products
